@@ -17,13 +17,4 @@ public class RetrofitClient {
         return retrofit;
     }
 
-    public static  Retrofit getRetrofitInstanceForStationCreation(){
-        if(retrofit == null){
-            retrofit = new Retrofit.Builder()
-                    .baseUrl("https://fuel-station-app-backend.herokuapp.com/api/")
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-        }
-        return retrofit;
-    }
 }

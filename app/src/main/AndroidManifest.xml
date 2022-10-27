@@ -54,6 +54,11 @@
             android:exported="true"
             android:theme="@style/Theme.EADAssignment.NoActionBar">
         </activity>
+        <activity
+            android:name=".UpdateFinishTime"
+            android:exported="true"
+            android:theme="@style/Theme.EADAssignment.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

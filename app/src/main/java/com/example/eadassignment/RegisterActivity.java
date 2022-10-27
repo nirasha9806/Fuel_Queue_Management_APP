@@ -20,6 +20,7 @@ import org.json.JSONObject;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button button;
     EditText cityEditText, usernameEditText, passwordEditText, vehicleTypeEditText,StationNameEditText ;
     String username, password,userType, vehicleType, stationName, city;
-    Array fuelDetails;
+    List<JSONObject> fuelDetails ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,7 +109,7 @@ public class RegisterActivity extends AppCompatActivity {
                     addStation();
                 }
                 ///intent to the sign in page using register button
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                Intent intent = new Intent(RegisterActivity.this,UpdateFuelStatusActivity.class);
                 startActivity(intent);
             }
 
@@ -125,7 +126,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         Station station = new Station(stationName,city,fuelDetails);
 
-        JSONPlaceholder jsonPlaceholder = RetrofitClient.getRetrofitInstanceForStationCreation().create(JSONPlaceholder.class);
+        JSONPlaceholder jsonPlaceholder = RetrofitClient.getRetrofitInstance().create(JSONPlaceholder.class);
         Call<Station> call = jsonPlaceholder.CreateFuelStation(station);
         call.enqueue(new Callback<Station>() {
             @Override

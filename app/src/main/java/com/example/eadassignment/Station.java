@@ -1,24 +1,31 @@
 package com.example.eadassignment;
 
+import org.json.JSONObject;
+
 import java.lang.reflect.Array;
+import java.util.List;
 
 public class Station {
     private String name, city;
-//    private Array fuelDetails;
+    private List<JSONObject> fuelDetails;
 
-    public Station(String name, String city, Array fuelDetails) {
+    public List<JSONObject> getFuelDetails() {
+        return fuelDetails;
+    }
+
+    public void setFuelDetails(List<JSONObject> fuelDetails) {
+        this.fuelDetails = fuelDetails;
+    }
+
+    public Station(String name, String city, List<JSONObject> fuelDetails) {
         this.name = name;
         this.city = city;
-//        this.fuelDetails = fuelDetails;
+        this.fuelDetails = fuelDetails;
     }
 
     public String getName() {
         return name;
     }
-
-//    public Array getFuelDetails() {
-//        return fuelDetails;
-//    }
 
     public void setName(String name) {
         this.name = name;
@@ -27,10 +34,6 @@ public class Station {
     public void setCity(String city) {
         this.city = city;
     }
-
-//    public void setFuelDetails(Array fuelDetails) {
-//        this.fuelDetails = fuelDetails;
-//    }
 
     public String getCity() {
         return city;

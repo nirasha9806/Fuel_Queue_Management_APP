@@ -25,6 +25,9 @@ public interface JSONPlaceholder {
     @POST("FuelStation")
     Call<Station> CreateFuelStation( @Body Station station);
 
+    @POST("FuelStation")
+    Call<Station> AddFuelArrivalTime( @Body Station station);
+
     @POST("login")
     Call<User> logUser(@Body User user);
 
@@ -33,4 +36,7 @@ public interface JSONPlaceholder {
 
     @POST("QUEUE")
     Call<Queue> addArrivalTime(Queue queue);
+
+    @GET("FuelStation/635ae4846934f11cbd6ea732")
+    Call<Station> GetStation();
 }

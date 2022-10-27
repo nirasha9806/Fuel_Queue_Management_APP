@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Station Details"
+            android:text="Update Arrival Time"
             android:layout_gravity="center"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -23,79 +23,91 @@
             android:id="@+id/toolbar_title" />
 
     </androidx.appcompat.widget.Toolbar>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:src="@drawable/stationimage"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Update Current Fuel Details"
-                android:textSize="22dp"
-                android:textStyle="bold"
-                android:textColor="@color/purple_700"/>
-        </LinearLayout>
 
         <EditText
             android:id="@+id/fuelStationName"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Fuel Station Name"
-            android:textColorHint="#9E9999"
-            android:padding="20dp"
+            android:layout_width="357dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/forget"
-            android:layout_marginTop="50dp"
-            android:textColor="@color/white"
-            android:inputType="text"/>
+            android:hint="Station Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9999" />
 
         <EditText
             android:id="@+id/updateFuelType"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="Update Fuel Type"
-            android:textColorHint="#9E9999"
             android:layout_below="@+id/fuelStationName"
-            android:padding="20dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/forget"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:inputType="text"/>
+            android:hint="Fuel Type"
+            android:inputType="text"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9999" />
 
         <EditText
             android:id="@+id/updateFuelArrival"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="Update Fuel Arrival Time"
-            android:textColorHint="#9E9999"
             android:layout_below="@+id/updateFuelType"
-            android:padding="20dp"
+            android:layout_marginTop="9dp"
             android:background="@drawable/forget"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:inputType="text"/>
+            android:hint="Fuel Arrival Time"
+            android:inputType="text"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9999" />
 
-        <EditText
-            android:id="@+id/updateFuelFinishTime"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="Update Fuel Finish Time"
-            android:textColorHint="#9E9999"
-            android:padding="20dp"
-            android:background="@drawable/forget"
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/updateFuelArrival"
             android:layout_marginTop="10dp"
-            android:textColor="@color/white"
-            android:inputType="text"/>
+            android:background="@drawable/button"
+            android:text="Add"
+            android:textColor="#FFF"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/stationAddress"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/forget"
+            android:hint="Address"
+            android:inputType="text"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#9E9999" />
 
     </RelativeLayout>
 
