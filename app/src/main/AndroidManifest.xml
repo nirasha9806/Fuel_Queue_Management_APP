@@ -59,6 +59,11 @@
             android:exported="true"
             android:theme="@style/Theme.EADAssignment.NoActionBar">
         </activity>
+        <activity
+            android:name=".QueueWaitingListActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EADAssignment.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

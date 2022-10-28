@@ -3,7 +3,6 @@ package com.example.eadassignment;
 import org.json.JSONObject;
 
 import java.util.List;
-import java.util.Queue;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -12,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 
 public interface JSONPlaceholder {
@@ -28,14 +28,14 @@ public interface JSONPlaceholder {
     @POST("FuelStation")
     Call<Station> AddFuelArrivalTime( @Body Station station);
 
-    @POST("login")
-    Call<User> logUser(@Body User user);
+    @POST("User/login")
+    Call<User> logUser(@Body String username);
 
-    @GET("search")
-    Call<Station> searchStation(String id);
+    @GET("FuelStation/search/{name}")
+    Call<List<Station>> searchStation(@Path(value = "name") String name);
 
-    @POST("QUEUE")
-    Call<Queue> addArrivalTime(Queue queue);
+    @GET("Queue")
+    Call<List<Queue>> getQueueDetails();
 
     @GET("FuelStation/635ae4846934f11cbd6ea732")
     Call<Station> GetStation();

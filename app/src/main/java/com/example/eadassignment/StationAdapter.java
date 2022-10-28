@@ -1,10 +1,12 @@
 package com.example.eadassignment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,14 @@ public class StationAdapter extends RecyclerView.Adapter<StationAdapter.StationV
         Station station = stationList.get(position);
         holder.name.setText(station.getName());
         holder.city.setText(station.getCity());
+        holder.fuelTypes.setText("Petrol, Diesel");
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, QueueWaitingListActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -41,12 +51,15 @@ public class StationAdapter extends RecyclerView.Adapter<StationAdapter.StationV
     }
 
     public class StationViewHolder extends RecyclerView.ViewHolder{
-        TextView name, city;
+        TextView name, city,fuelTypes;
+        Button btn;
 
         public StationViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.name);
             city = itemView.findViewById(R.id.city);
+            fuelTypes = itemView.findViewById(R.id.fuels);
+            btn = itemView.findViewById(R.id.moreBtn);
         }
     }
 }

@@ -23,26 +23,29 @@
         android:letterSpacing="0.03"/>
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/forget"
+        android:hint="Username"
         android:paddingLeft="20dp"
-        android:hint="Email"
-        android:textColorHint="@color/text_hint_color"
         android:textColor="@color/purple_500"
+        android:textColorHint="@color/text_hint_color"
         android:textSize="18dp"
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/forget"
-        android:paddingLeft="20dp"
         android:hint="Password"
-        android:textColorHint="@color/text_hint_color"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
         android:textColor="@color/purple_500"
+        android:textColorHint="@color/text_hint_color"
         android:textSize="18dp"
         android:textStyle="bold" />
 
